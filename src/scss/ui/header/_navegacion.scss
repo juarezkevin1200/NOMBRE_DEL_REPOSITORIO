@@ -1,0 +1,51 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    @include m.desktop {
+        flex-direction: row;
+    }
+  
+    &__enlace {
+        color: v.$blanco;
+        font-size: 2rem;
+        padding: 2rem;
+        font-weight: v.$black;
+        text-transform: uppercase;
+        text-align: center;
+
+        &--actual,
+        &:hover {
+            background-color: v.$blanco;
+            color: v.$negro;
+        }
+
+        &:hover .enlace-carrito{
+            cursor: pointer;
+            filter: invert(0%);
+            background-color: v.$blanco;
+            color: v.$primario;
+        }
+        
+    }
+
+    .enlace-carrito {
+        width: 4rem;
+        
+        filter: invert(100%);
+        margin: 0rem;
+        padding: 0;
+        &:hover {
+            cursor: pointer;
+            filter: invert(0%);
+            background-color: v.$blanco;
+            color: v.$primario;
+        }
+
+        @include m.tablet {
+            margin-top: 0;
+        }
+    }
+}
