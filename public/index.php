@@ -11,7 +11,8 @@ use Controllers\ProductosController;
 
 $router = new Router();
 
-
+$router->get('/', [PaginasController::class, 'index']);
+$router->post('/', [PaginasController::class, 'index']);
 // Login
 $router->get('/login', [AuthController::class, 'login']);
 $router->post('/login', [AuthController::class, 'login']);
@@ -30,7 +31,7 @@ $router->get('/recuperar', [AuthController::class, 'reestablecer']);
 $router->post('/recuperar', [AuthController::class, 'reestablecer']);
 
 // Confirmación de Cuenta
-$router->get('/', [PaginasController::class, 'index']);
+
 $router->get('/productos', [PaginasController::class, 'productos']);
 $router->get('/mensaje', [AuthController::class, 'mensaje']);
 $router->get('/confirmar-cuenta', [AuthController::class, 'confirmar']);
