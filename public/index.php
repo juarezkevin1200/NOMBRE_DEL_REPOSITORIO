@@ -12,7 +12,7 @@ use Controllers\ProductosController;
 $router = new Router();
 
 $router->get('/', [PaginasController::class, 'index']);
-$router->post('/', [PaginasController::class, 'index']);
+//$router->post('/', [PaginasController::class, 'index']);
 // Login
 $router->get('/login', [AuthController::class, 'login']);
 $router->post('/login', [AuthController::class, 'login']);
@@ -33,6 +33,12 @@ $router->post('/recuperar', [AuthController::class, 'reestablecer']);
 // Confirmación de Cuenta
 
 $router->get('/productos', [PaginasController::class, 'productos']);
+$router->get('/productos/agregar-carrito', [PaginasController::class, 'agregarCarrito']);
+$router->get('/pedidos', [PaginasController::class, 'carrito']);
+$router->get('/pedidos/pagar', [PaginasController::class, 'pagar']);
+$router->post('/pedidos/pagar', [PaginasController::class, 'pagar']);
+$router->get('/pedidos/completado', [PaginasController::class, 'completado']);
+
 $router->get('/mensaje', [AuthController::class, 'mensaje']);
 $router->get('/confirmar-cuenta', [AuthController::class, 'confirmar']);
 

@@ -11,9 +11,12 @@
                     <div class="contenido-productos">
                         <h3><?php echo $producto->nombre; ?></h3>
                         <p class="precio">$<?php echo $producto->precio; ?></p>
-                        <a href="/propiedad?id=<?php echo $producto->id; ?>">
-                        Agregar al carrito
-                        </a>
+                        <form method="POST" action="/productos/agregar-carrito" >
+                                <input type="hidden" name="id" value="<?php echo $producto->id; ?>">
+                                <button  type="submit" class="boton">    
+                                Agregar al carrito
+                        </button>
+                        </form>
                     </div><!--.contenido-producto-->
             </div><!--producto-->
             <?php } ?>

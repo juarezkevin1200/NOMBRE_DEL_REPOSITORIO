@@ -140,6 +140,13 @@ class ActiveRecord {
         return array_shift( $resultado ) ;
     }
 
+    // Busqueda Where con Columna 
+    public static function whereM($columna, $valor) {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
+        $resultado = self::consultarSQL($query);
+        return  $resultado ;
+    }
+
     // Retornar los registros por un orden
     public static function ordenar($columna, $orden) {
         $query = "SELECT * FROM " . static::$tabla . " ORDER BY ${columna} ${orden} "; 

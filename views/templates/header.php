@@ -3,7 +3,9 @@
         <nav class="header__navegacion">
             <!--  -->
             <?php if(is_auth()) { ?>
-                <a href="<?php echo is_admin() ? '/admin/dashboard' : '/finalizar-registro'; ?>" class="header__enlace">Administrar</a>
+                <?php if(is_admin()) { ?>
+                <a href="<?php echo is_admin() ? '/admin/dashboard' : '/productos'; ?>" class="header__enlace">Administrar</a>
+                <?php } ?>
                 <form method="POST" action="/logout" class="header__form">
                     <input type="submit" value="Cerrar Sesión" class="header__submit">
                 </form>
@@ -37,11 +39,12 @@
         </a>
         
         <nav class="navegacion">
-            <a href="/devwebcamp" class="navegacion__enlace <?php echo pagina_actual('/devwebcamp') ? 'navegacion__enlace--actual' : ''; ?>">Paquetes</a>
+            <a href="/devwebcamp" class="navegacion__enlace <?php echo pagina_actual('/') ? 'navegacion__enlace--actual' : ''; ?>">Paquetes</a>
             <a href="/paquetes" class="navegacion__enlace <?php echo pagina_actual('/paquetes') ? 'navegacion__enlace--actual' : ''; ?>">Nosotros</a>
             <a href="/productos" class="navegacion__enlace <?php echo pagina_actual('/productos') ? 'navegacion__enlace--actual' : ''; ?>">Productos</a>
             <a href="/direccion" class="navegacion__enlace <?php echo pagina_actual('/direccion') ? 'navegacion__enlace--actual' : ''; ?>">Dirección</a>
-            <a href="/pedidos" class="navegacion__enlace <?php echo pagina_actual('/pedidos') ? 'navegacion__enlace--actual' : ''; ?>"><img class="enlace-carrito" src="/build/img/cart-shopping-solid.svg"></a>
+            <a href="/pedidos" class="navegacion__enlace <?php echo pagina_actual('/pedidos') ? 'navegacion__enlace--actual' : ''; ?>"><img class="enlace-carrito" src="/build/img/cart-shopping-solid.svg"> 
+         <?php if(is_auth()){ echo $total_carrito;} ?></a>
             
         </nav>
     </div>

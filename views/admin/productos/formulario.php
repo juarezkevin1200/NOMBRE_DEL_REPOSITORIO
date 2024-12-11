@@ -33,6 +33,7 @@
             id="precio"
             name="precio"
             placeholder="Ej. 20"
+            step="0.01"
             value="<?php echo $producto->precio; ?>"
         >
     </div>

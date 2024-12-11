@@ -962,19 +962,29 @@ h3 {
 .productos__contenedor {
   width: min(95%, 140rem);
   margin: 0 auto;
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .productos__contenedor {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .productos__contenido {
   align-items: center;
+  margin: 2rem 0;
 }
 .productos__imagen {
-  width: 23rem;
+  width: 50%;
   border-radius: 4rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.contenido-productos a {
+.contenido-productos .boton {
   background-color: #784D3C;
   padding: 1.5rem 4rem;
   color: #FFFFFF;
@@ -990,12 +1000,12 @@ h3 {
   font-size: 1.4rem;
   border-radius: 1rem;
 }
-.contenido-productos a:hover {
+.contenido-productos .boton:hover {
   background-color: rgb(86, 55.1833333333, 43);
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  .contenido-productos a {
+  .contenido-productos .boton {
     width: auto;
   }
 }
@@ -1157,9 +1167,9 @@ h3 {
 }
 
 .header {
-  min-height: 60rem;
-  background-image: url(../img/grafico.svg), url(../img/grafico.svg), linear-gradient(to right, #1a1b15, rgba(26, 27, 21, 0.5)), -webkit-image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
-  background-image: url(../img/grafico.svg), url(../img/grafico.svg), linear-gradient(to right, #1a1b15, rgba(26, 27, 21, 0.5)), image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
+  min-height: 30rem;
+  background-image: url(../img/grafico.svg), url(../img/grafico.svg), linear-gradient(to right, rgba(26, 27, 21, 0.8), rgba(26, 27, 21, 0.5)), -webkit-image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
+  background-image: url(../img/grafico.svg), url(../img/grafico.svg), linear-gradient(to right, rgba(26, 27, 21, 0.8), rgba(26, 27, 21, 0.5)), image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
   background-repeat: no-repeat;
   background-size: 400px, 400px, cover, cover;
   background-position: top left, bottom right, center center, center center;
