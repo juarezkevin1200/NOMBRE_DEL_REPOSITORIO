@@ -15,6 +15,10 @@ class ActiveRecord {
         self::$db = $database;
     }
 
+    public static function getDB() {
+        return self::$db;
+    }
+
     // Setear un tipo de Alerta
     public static function setAlerta($tipo, $mensaje) {
         static::$alertas[$tipo][] = $mensaje;
@@ -213,7 +217,7 @@ class ActiveRecord {
         $query .= join("', '", array_values($atributos));
         $query .= " ') ";
 
-        // debuguear($query); // Descomentar si no te funciona algo
+        //debuguear($query); // Descomentar si no te funciona algo
 
         // Resultado de la consulta
         $resultado = self::$db->query($query);

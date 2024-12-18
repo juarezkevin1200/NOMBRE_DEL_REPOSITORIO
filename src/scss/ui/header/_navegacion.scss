@@ -4,10 +4,11 @@
 .navegacion {
     display: flex;
     flex-direction: column;
+    
     @include m.desktop {
         flex-direction: row;
     }
-  
+
     &__enlace {
         color: v.$blanco;
         font-size: 2rem;
@@ -15,37 +16,31 @@
         font-weight: v.$black;
         text-transform: uppercase;
         text-align: center;
+        display: flex;
+        align-items: center; // Asegura que el texto y la imagen estén alineados
+        gap: 1rem; // Espacio entre el texto y la imagen (opcional)
 
         &--actual,
         &:hover {
             background-color: v.$blanco;
             color: v.$negro;
+
+            // Aplica el efecto de hover también a la imagen dentro del enlace
+            .navegacion__enlace-carrito {
+                filter: invert(0%);
+            }
         }
 
-        &:hover .enlace-carrito{
-            cursor: pointer;
-            filter: invert(0%);
-            background-color: v.$blanco;
-            color: v.$primario;
-        }
-        
-    }
-
-    .enlace-carrito {
-        width: 4rem;
-        
-        filter: invert(100%);
-        margin: 0rem;
-        padding: 0;
-        &:hover {
-            cursor: pointer;
-            filter: invert(0%);
-            background-color: v.$blanco;
-            color: v.$primario;
-        }
-
-        @include m.tablet {
-            margin-top: 0;
+        &-carrito {
+            width: 4rem;
+            filter: invert(100%);
+            transition: filter 0.3s ease, background-color 0.3s ease; // Transición suave para el hover
+            margin: 0;
+            padding: 0;
+            
+            @include m.tablet {
+                margin-top: 0;
+            }
         }
     }
 }

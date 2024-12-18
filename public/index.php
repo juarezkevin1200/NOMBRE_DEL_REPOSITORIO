@@ -2,9 +2,11 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\AdminPedidosController;
 use Controllers\APIController;
 use MVC\Router;
 use Controllers\AuthController;
+use Controllers\CLientesController;
 use Controllers\DashboardController;
 use Controllers\PaginasController;
 use Controllers\ProductosController;
@@ -33,8 +35,11 @@ $router->post('/recuperar', [AuthController::class, 'reestablecer']);
 // Confirmación de Cuenta
 
 $router->get('/productos', [PaginasController::class, 'productos']);
-$router->get('/productos/agregar-carrito', [PaginasController::class, 'agregarCarrito']);
+$router->post('/productos/agregar-carrito', [PaginasController::class, 'agregarCarrito']);
 $router->get('/pedidos', [PaginasController::class, 'carrito']);
+$router->post('/pedidos/eliminar', [PaginasController::class, 'eliminar_carrito']);
+$router->post('/pedidos/agregar-orden', [PaginasController::class, 'agregarOrden']);
+$router->get('/pedidos/capture-order', [PaginasController::class, 'capturarOrden']);
 $router->get('/pedidos/pagar', [PaginasController::class, 'pagar']);
 $router->post('/pedidos/pagar', [PaginasController::class, 'pagar']);
 $router->get('/pedidos/completado', [PaginasController::class, 'completado']);
@@ -53,6 +58,11 @@ $router->get('/admin/productos/editar', [ProductosController::class, 'editar']);
 $router->post('/admin/productos/editar', [ProductosController::class, 'editar']);
 $router->post('/admin/productos/eliminar', [ProductosController::class, 'eliminar']);
 
+$router->get('/admin/pedidos', [AdminPedidosController::class, 'index']);
+
+$router->get('/admin/clientes', [CLientesController::class, 'index']);
+
+
 $router->get('/admin/horarios', [ProductosController::class, 'index']);
 // Registro de Usuarios
 $router->get('/finalizar-registro', [RegistroController::class, 'crear']);
@@ -64,7 +74,7 @@ $router->post('/api/eliminar',[APIController::class,'eliminar']);
 
 // Área Pública
 
-
+$router->get('/nosotros', [PaginasController::class, 'nosotros']);
 $router->get('/direccion', [PaginasController::class, 'direccion']);
 $router->get('/404', [PaginasController::class, 'error']);
 

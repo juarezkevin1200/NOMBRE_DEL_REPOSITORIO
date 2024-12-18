@@ -23,7 +23,7 @@ class Paypal {
 
         $baseUrl = $_ENV['PAYPAL_BASE_URL'];
         $UrlRet = $_ENV['HOST'] . "/pedidos/completado";
-        $total = $_POST['total'] ?? 20.35;
+        $total = $_SESSION['total'] ?? 1000.00;
         $data = [
             "intent" => "CAPTURE",
             "purchase_units" => [
@@ -38,8 +38,8 @@ class Paypal {
                 "brand_name" => "Mi tienda",
                 "landing_page" => "NO_PREFERENCE",
                 "user_action" => "PAY_NOW",
-                "return_url" => $_ENV["HOST"] . "/capture-order" ,
-                "cancel_url" => $_ENV["HOST"] . "/cancel-order"
+                "return_url" => $_ENV["HOST"] . "/pedidos/capture-order" ,
+                "cancel_url" => $_ENV["HOST"] . "/pedidos/cancel-order"
 
             ]
 

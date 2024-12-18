@@ -26,7 +26,7 @@
             <p class="header__texto">Sábado a Domingo 10:00 am - 2:00 pm</p>
             <p class="header__texto header__texto--modalidad">Pedidos en línea o en el local</p>
 
-            <a href="/registro" class="header__boton">Ir a Compras </a>
+            <a href="/productos" class="header__boton">Ir a Compras </a>
         </div>
     </div>
 </header>
@@ -39,11 +39,10 @@
         </a>
         
         <nav class="navegacion">
-            <a href="/devwebcamp" class="navegacion__enlace <?php echo pagina_actual('/') ? 'navegacion__enlace--actual' : ''; ?>">Paquetes</a>
-            <a href="/paquetes" class="navegacion__enlace <?php echo pagina_actual('/paquetes') ? 'navegacion__enlace--actual' : ''; ?>">Nosotros</a>
+            <a href="/nosotros" class="navegacion__enlace <?php echo pagina_actual('/nosotros') ? 'navegacion__enlace--actual' : ''; ?>">Nosotros</a>
             <a href="/productos" class="navegacion__enlace <?php echo pagina_actual('/productos') ? 'navegacion__enlace--actual' : ''; ?>">Productos</a>
             <a href="/direccion" class="navegacion__enlace <?php echo pagina_actual('/direccion') ? 'navegacion__enlace--actual' : ''; ?>">Dirección</a>
-            <a href="/pedidos" class="navegacion__enlace <?php echo pagina_actual('/pedidos') ? 'navegacion__enlace--actual' : ''; ?>"><img class="enlace-carrito" src="/build/img/cart-shopping-solid.svg"> 
+            <a href="/pedidos" class="navegacion__enlace <?php echo pagina_actual('/pedidos') ? 'navegacion__enlace--actual' : ''; ?>"><img class="navegacion__enlace-carrito" src="/build/img/cart-shopping-solid.svg"> 
          <?php if(is_auth()){ echo $total_carrito;} ?></a>
             
         </nav>

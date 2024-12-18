@@ -1,7 +1,7 @@
 <h2 class="dashboard__heading"><?php echo $titulo; ?></h2>
 
 <div class="dashboard__contenedor-boton">
-    <a class="dashboard__boton" href="/admin/productos/crear">
+    <a class="dashboard__boton" href="/admin/cliente/crear">
         <i class="fa-solid fa-circle-plus"></i>
         Añadir Producto
     </a>
@@ -23,7 +23,7 @@
                 </thead>
 
                 <tbody class="table__tbody">
-                    <?php foreach($productos as $producto) { ?>
+                    <?php foreach($clientes as $cliente) { ?>
                         <tr class="table__tr">
                             <td class="table__td"><?php echo $producto->nombre; ?></td>
                             <td class="table__td">$ <?php echo $producto->precio; ?></td>

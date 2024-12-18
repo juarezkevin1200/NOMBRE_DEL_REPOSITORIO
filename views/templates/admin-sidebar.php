@@ -21,13 +21,13 @@
             </span>    
         </a>
 
-        <a href="/admin/registrados" class="dashboard__enlace <?php echo pagina_actual('/registrados') ? 'dashboard__enlace--actual' : ''; ?> ">
+        <a href="/admin/clientes" class="dashboard__enlace <?php echo pagina_actual('/clientes') ? 'dashboard__enlace--actual' : ''; ?> ">
             <i class="fa-solid fa-users dashboard__icono"></i>
             <span class="dashboard__menu-texto">
                 Clientes
             </span>    
         </a>
-        <a href="/admin/regalos" class="dashboard__enlace <?php echo pagina_actual('/regalos') ? 'dashboard__enlace--actual' : ''; ?> ">
+        <a href="/admin/pedidos" class="dashboard__enlace <?php echo pagina_actual('/pedidos') ? 'dashboard__enlace--actual' : ''; ?> ">
             <i class="fa-solid fa-ticket"></i>
             <span class="dashboard__menu-texto">
                 Pedidos

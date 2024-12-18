@@ -20,6 +20,7 @@
     }
 
     &__texto {
+        color: v.$secundario;
         line-height: 2;
         text-align: center;
         @include m.tablet {
@@ -28,6 +29,7 @@
     }
 
     &__copyright {
+        color: v.$secundario;
         background-color: darken(v.$primario, 10);
         margin: 3rem 0 0 0;
         padding: 2rem 0;

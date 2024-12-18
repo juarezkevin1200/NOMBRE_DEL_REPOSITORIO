@@ -1,0 +1,66 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.nosotros {
+    @include m.contenedor;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: lighten(v.$primario, 55%);
+    color: v.$gris-oscuro;
+
+    &__contenido {
+        flex: 1;
+        max-width: 600px;
+        padding: 1rem;
+
+        &__titulo {
+            @include m.texto-fluido(2rem, 3rem);
+            color: v.$primario;
+            margin-bottom: 1rem;
+        }
+
+        &__descripcion {
+            font-size: 1.6rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+
+            strong {
+                color: darken(v.$primario, 10%);
+                font-weight: v.$bold;
+            }
+        }
+    }
+
+    &__imagen {
+        flex: 1;
+        max-width: 400px;
+        padding: 1rem;
+
+        img {
+            width: 100%;
+            border-radius: 8px;
+            @include m.shadow;
+        }
+    }
+
+   
+
+    @include m.desktop {
+        flex-direction: row;
+
+        &__contenido {
+            text-align: left;
+        }
+
+        &__imagen {
+            margin: 0;
+        }
+    }
+
+
+   
+}
