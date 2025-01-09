@@ -28,7 +28,7 @@ CREATE TABLE `carrito` (
   `idCliente` int(11) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +105,7 @@ CREATE TABLE `ticket_productos` (
   `id_ticket` int(11) DEFAULT NULL,
   `id_productos` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,7 +114,7 @@ CREATE TABLE `ticket_productos` (
 
 LOCK TABLES `ticket_productos` WRITE;
 /*!40000 ALTER TABLE `ticket_productos` DISABLE KEYS */;
-INSERT INTO `ticket_productos` VALUES (1,1,12),(2,1,11),(3,1,10),(4,1,7),(5,1,4),(6,1,9),(7,1,11),(8,2,1),(9,2,2),(10,2,3),(11,2,4),(12,2,7),(13,3,10),(14,3,11),(15,3,12),(16,3,7),(17,3,1),(18,3,2),(19,4,10),(20,4,13),(21,4,7),(22,4,1),(23,4,2),(24,5,10),(25,5,11),(26,6,10),(27,6,11),(28,6,12),(29,7,10),(30,7,11),(31,7,12),(32,8,10),(33,8,11),(34,8,12),(35,9,11),(36,9,7),(37,9,8),(38,9,2),(39,9,1);
+INSERT INTO `ticket_productos` VALUES (1,1,11),(2,1,12),(3,1,10),(4,1,13);
 /*!40000 ALTER TABLE `ticket_productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,7 +133,7 @@ CREATE TABLE `tickets` (
   `status` varchar(20) DEFAULT 'completado',
   `order_id` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `tickets` (
 
 LOCK TABLES `tickets` WRITE;
 /*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
-INSERT INTO `tickets` VALUES (1,2,20.35,'2024-12-18 04:09:46','COMPLETED',' 2MU60995NY0301235'),(2,4,0.00,'2024-12-18 04:22:49','COMPLETED',' 91B15805V96661725'),(3,4,0.00,'2024-12-18 04:37:03','COMPLETED',' 7UJ11205LD890624S'),(4,4,140.14,'2024-12-18 04:53:09','COMPLETED',' 9GD14979517151725'),(5,4,69.96,'2024-12-18 04:58:03','COMPLETED',' 4FM122703K500984M'),(6,4,122.16,'2024-12-18 05:00:44','COMPLETED',' 8UR61700WM395543R'),(7,4,122.16,'2024-12-18 05:02:19','COMPLETED',' 4P912523999025931'),(8,2,122.16,'2024-12-18 05:12:28','COMPLETED',' 7W704200J1661650H'),(9,2,112.88,'2024-12-18 07:06:55','COMPLETED',' 0VK301620R6205445');
+INSERT INTO `tickets` VALUES (1,2,145.94,'2024-12-18 10:51:15','COMPLETED',' 8GV18237N9045803L');
 /*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +164,7 @@ CREATE TABLE `usuarios` (
   `admin` tinyint(1) DEFAULT NULL,
   ` empleado_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (2,' Kevin','Juarez','correo@correo.com','$2y$10$Cdcy17dW5EhKahM5FcIBR.SbYZp3UxwaIM9svQiMjkQeLHz2CJSlK',1,'673b4d7555460',1,NULL),(3,' Shery','Ortega','shery@gmail.com','$2y$10$fIHhBkXmlP616YBGA.NMJOiLKLS.BmbkwpBY4go5vcmgFAe2x4LLa',1,'',0,NULL),(4,' Iran','San Agustin','iran123@gmail.com','$2y$10$.MQ1sjX6c7igdTyRmkqjpekrWo89F1MSdmx4X4VkjqA27tn8UcSEe',1,'',0,NULL),(5,' Monty','Montiel','monty@gmail.com','$2y$10$vSs0Hr59MzJ46pk6JKfA4.TAH7vA/5NZQemiwjGbUdrea8EU3nbsq',1,'',0,NULL);
+INSERT INTO `usuarios` VALUES (2,' Kevin','Juarez','correo@correo.com','$2y$10$Cdcy17dW5EhKahM5FcIBR.SbYZp3UxwaIM9svQiMjkQeLHz2CJSlK',1,'673b4d7555460',1,NULL),(3,' Shery','Ortega','shery@gmail.com','$2y$10$fIHhBkXmlP616YBGA.NMJOiLKLS.BmbkwpBY4go5vcmgFAe2x4LLa',1,'',0,NULL),(4,' Iran','San Agustin','iran123@gmail.com','$2y$10$.MQ1sjX6c7igdTyRmkqjpekrWo89F1MSdmx4X4VkjqA27tn8UcSEe',1,'',0,NULL),(5,' Monty','Montiel','monty@gmail.com','$2y$10$vSs0Hr59MzJ46pk6JKfA4.TAH7vA/5NZQemiwjGbUdrea8EU3nbsq',1,'',0,NULL),(6,' fulanito','juarez','fulanito@gmail.com','$2y$10$XHHcIspQhk0A8xksOtgAheuiA9VMsP1z5XvGFAe2QNOD6BcVaCzui',1,'',0,NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -186,4 +186,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-18  7:55:29
+-- Dump completed on 2025-01-09 17:37:01
